@@ -8,6 +8,9 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
+        body > h1 {
+            text-decoration: underline;
+        }
         table {
             width: 500px;
             border-collapse: collapse;
@@ -16,9 +19,21 @@
             border: 1px solid black;
             padding: 10px;
         }
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
         thead, tfoot {
             background-color: gray;
             color: white;
+        }
+        tbody > tr:nth-child(odd){
+            background-color: white;
+        }
+        tbody > tr:nth-child(even) {
+            background-color: lightgray;
         }
         td.num {
             text-align: right;
@@ -29,11 +44,14 @@
     <h1>Uso de tabelas grandes</h1>
 
     <table>
+        <caption>
+            População das Unidades Federativas
+        </caption>
 
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
 
@@ -152,7 +170,7 @@
 
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num"><strong>210.147.125</strong></td>
             </tr>
         </tfoot>
